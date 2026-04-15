@@ -1,12 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Example</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h3>Example for push</h3>
-        <b>HAHA</b>
-    </body>
-</html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CyberFun Lab</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="./photo/icon.png" alt="CyberFun Logo">
+      <span>CyberFun</span>
+    </div>
+    <nav>
+      <a href="home2.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="cyberlab.html">Cyber Lab</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <h1>
+          Making Cybersecurity Fun, Interactive,
+          and Accessible for Everyone
+        </h1>
+        <p>
+          An engaging client-side platform where users explore password analysis,
+          URL security detection, steganography, and real-world security quizzes
+          through hands-on learning.
+        </p>
+
+        <a href="#contact-section" class="cta-button">Get Started Now</a>
+      </div>
+
+      <div class="hero-icon-box">
+        <div class="icon-row">
+
+          <div class="icon-card">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <div class="icon-card">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <div class="icon-card">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="awareness-section">
+    <div class="awareness-container">
+
+      <div class="awareness-title">
+        <h2>Why Security Awareness Matters</h2>
+      </div>
+
+      <div class="awareness-content">
+        <p>
+          Today, digital technologies influence almost every aspect of our lives —
+          from communication and banking to education and healthcare.
+          As our reliance on connected systems increases, so does the risk
+          of cyber threats.
+        </p>
+
+        <p>
+          Many cyber incidents occur not because of advanced technical attacks,
+          but due to weak passwords, phishing emails, social engineering,
+          and unsafe browsing habits. Developing strong security awareness
+          is essential to protect personal data and digital identities.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="threat-section">
+    <h2 class="threat-title">
+      The goals of malicious cyber actors may include:
+    </h2>
+
+    <div class="threat-grid">
+
+      <div class="threat-card">
+        <div class="icon"><i class="fa-solid fa-database"></i></div>
+        <div class="accent-line"></div>
+        <p>Stealing sensitive personal or financial data</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
+        <div class="accent-line"></div>
+        <p>Gaining unauthorized access to user accounts</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="icon"><i class="fa-solid fa-bug"></i></div>
+        <div class="accent-line"></div>
+        <p>Spreading malware or ransomware attacks</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+        <div class="accent-line"></div>
+        <p>Disrupting digital systems and services</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="icon"><i class="fa-solid fa-user-secret"></i></div>
+        <div class="accent-line"></div>
+        <p>Manipulating users through social engineering</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="article-preview">
+    <h2>How to Spot Cybersecurity Risks as a User</h2>
+
+    <p class="preview-text">
+      Learn how to recognize common warning signs of cyber threats and
+      protect your confidential data from fraud and unauthorized access.
+    </p>
+
+    <button class="read-btn" onclick="toggleArticle()">
+      Read Full Guide
+    </button>
+
+    <!-- Hidden Full Article -->
+    <div id="fullArticle" class="article-content">
+
+      <h3>[1] Be Alert for Phishing Messages</h3>
+
+      <p>Cybercriminals often send fake emails or SMS pretending to be your bank or service provider.</p>
+
+      <ul>
+        <li>Urgent messages like “Your account will be suspended!”</li>
+        <li>Suspicious links</li>
+        <li>Poor grammar or strange sender addresses</li>
+        <li>Requests for passwords or OTP codes</li>
+      </ul>
+
+      <p class="action-text">
+        ! Never click unknown links. !
+        ! Verify the sender address. !
+        ! Contact the bank directly if unsure. !
+      </p>
+
+      <h3>[2] Check Website Security Before Logging In</h3>
+
+      <ul>
+        <li>HTTPS in the address bar</li>
+        <li>Lock icon</li>
+        <li>Correct domain name (no extra letters)</li>
+      </ul>
+
+      <h3>[3] Monitor Unusual Account Activity</h3>
+
+      <ul>
+        <li>Login from unknown location</li>
+        <li>Password reset you didn’t request</li>
+        <li>Unexpected transaction notifications</li>
+      </ul>
+
+      <p class="action-text">
+        ! Change password immediately !
+        ! Enable 2FA !
+        ! Contact support !
+      </p>
+
+      <h3>[4] Avoid Using Public Wi-Fi for Banking</h3>
+
+      <p>Public networks increase risk of interception attacks.</p>
+
+      <h3>[5] Be Careful with Downloads & Attachments</h3>
+
+      <p>Only download apps and software from trusted sources.</p>
+
+      <div class="summary-box">
+        <strong>Summary:</strong>
+        Cybersecurity risks often begin with small warning signs.
+        Staying alert significantly reduces fraud and data breach risks.
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="contact-section" class="final-cta-new">
+    <div class="cta-text">
+      <h2>Take the Next Step in Your Cyber Journey</h2>
+      <p>
+        Put your knowledge into action. Test your passwords, analyse suspicious URLs,
+        and challenge yourself with real-world security scenarios.
+      </p>
+    </div>
+
+    <div class="cta-actions">
+      <a href="cyberlab.html" class="cta-main">Enter Cyber Lab</a>
+      <a href="quiz.html" class="cta-outline">Take the Quiz</a>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <p>© 2025 CyberFun | Educational Project</p>
+  </footer>
+
+  <script src="home.js"></script>
+</body>
+
 </html>

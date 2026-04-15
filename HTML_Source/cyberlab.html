@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CyberFun | Cyber Lab</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="cyberlab.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="./photo/icon.png" alt="CyberFun Logo">
+      <span>CyberFun</span>
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="cyberlab.html">Cyber Lab</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       CYBER LAB INTRO
+  ========================== -->
+
+  <section class="lab-hero">
+    <div class="lab-hero-container">
+      <h1>Cyber Lab</h1>
+      <p class="hero-subtitle">
+        "Explore interactive security tools designed to analyse passwords, validate URLs, and protect sensitive
+        information through encryption."
+      </p>
+    </div>
+  </section>
+  
+  <section class="lab-content">
+
+    <div class="tools-wrapper">
+
+      <h2 class="section-title">Security Awareness Games</h2>
+      <!-- =========================
+       PASSWORD + URL SECTION
+      ========================== -->
+      <section class="tool-section">
+
+        <div class="tool-card">
+          <h2>Password Strength Analyzer</h2>
+
+          <input type="password" placeholder="Enter your password">
+
+          <div class="checkbox-results">
+
+            <label>
+              <input type="checkbox" disabled>
+              <span>Minimum 8 characters</span>
+            </label>
+
+            <label>
+              <input type="checkbox" disabled>
+              <span>Uppercase letter</span>
+            </label>
+
+            <label>
+              <input type="checkbox" disabled>
+              <span>Number included</span>
+            </label>
+
+            <label>
+              <input type="checkbox" disabled>
+              <span>Special character</span>
+            </label>
+
+          </div>
+
+          <button class="tool-btn">Analyze</button>
+        </div>
+
+        <div class="tool-card">
+          <h2>URL Security Detector</h2>
+
+          <input type="text" placeholder="Enter URL (e.g. https://example.com)">
+
+          <div class="checkbox-results">
+            <label><input type="checkbox" disabled> HTTPS detected</label>
+            <label><input type="checkbox" disabled> No suspicious keywords</label>
+            <label><input type="checkbox" disabled> Valid domain structure</label>
+            <label><input type="checkbox" disabled> Not IP-based URL</label>
+          </div>
+
+          <button class="tool-btn">Validate</button>
+        </div>
+
+      </section>
+
+      <!-- =========================
+       STEGANOGRAPHY SECTION
+      ========================== -->
+
+      <section class="stego-section">
+
+        <div class="stego-section-inner">
+
+          <h2>Text-in-Image Protection</h2>
+
+          <div class="stego-tabs">
+            <button onclick="showEncode()" class="active-tab" id="encodeTab">Encode</button>
+            <button onclick="showDecode()" id="decodeTab">Decode</button>
+          </div>
+
+          <div id="encodePanel" class="stego-panel active-panel">
+            <p>Upload an image and hide your secret message inside it.</p>
+            <input type="file">
+            <textarea placeholder="Enter secret message"></textarea>
+            <button class="tool-btn">Generate Encrypted Image</button>
+          </div>
+
+          <div id="decodePanel" class="stego-panel">
+            <p>Upload an encrypted image to reveal hidden content.</p>
+            <input type="file">
+            <button class="tool-btn">Decode Message</button>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </section>
+  <footer>
+    <p>© 2025 CyberFun | Educational Project</p>
+  </footer>
+  <script src="cyberlab.js"></script>
+</body>
+
+</html>

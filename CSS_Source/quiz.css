@@ -1,0 +1,194 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= Security Awareness Quiz ================= */
+
+.quiz-section {
+  flex: 1;
+  padding: 100px 30px 80px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #2f3951 0%,
+    #29354e 50%,
+    #1f3f62 100%
+  );
+  color: white;
+}
+
+.quiz-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.quiz-quote {
+  font-style: italic;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.quiz-subtitle {
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+
+/* ================= CARD CONTAINER ================= */
+
+.quiz-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  max-width: 1000px; 
+}
+
+
+/* ================= QUIZ CARD ================= */
+
+.quiz-card {
+  background: #1e293b;
+  padding: 22px 24px;
+  width: 300px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 290px; 
+  transition: all 0.3s ease;
+}
+
+.quiz-card h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.quiz-card h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 60%;              
+  height: 3px;
+  background: #0ea5e9;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #0ea5e9;
+  transition: width 0.3s ease;
+}
+
+.quiz-card:hover h3::after {
+  width: 100%;            
+}
+
+.quiz-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+}
+
+
+/* ================= CARD CONTENT ================= */
+
+.card-content {
+  text-align: center;
+}
+
+.card-content p {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* ================= CARD ACTIONS (BOTTOM FIXED) ================= */
+
+.card-actions {
+  margin-top: auto;
+  text-align: center;
+}
+
+.card-actions label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+/* ================= DROPDOWN ================= */
+
+.level-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.level-select:focus {
+  box-shadow: 0 0 0 2px #0ea5e9;
+}
+
+
+/* ================= BUTTON ================= */
+
+.start-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.start-btn:hover {
+  background: #0284c7;
+}
+
+
+
+/* ================= QUESTION AREA ================= */
+
+#quiz-container {
+  max-width: 750px;
+  margin: auto;
+  text-align: left;
+}
+
+.question-box {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.option {
+  margin: 12px 0;
+  padding: 12px;
+  background: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.option:hover {
+  background: #3f4f63;
+}
+
+.option.correct {
+  background: #065f46;
+}
+
+.option.incorrect {
+  background: #7f1d1d;
+}
+
+.explanation {
+  margin-top: 8px;
+  font-size: 14px;
+  padding: 10px;
+  background: #0f172a;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 4px;
+}
+
+

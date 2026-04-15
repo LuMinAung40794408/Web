@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #e2e8f0;
+
+  background:
+    linear-gradient(rgba(58, 94, 179, 0.85), rgba(31, 44, 74, 0.95)),
+    url("./photo/cyberlab.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== BIG GLASS CONTAINER ===== */
+
+.lab-content {
+  padding: 120px 20px 120px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tools-wrapper {
+  width: 95%;
+  max-width: 1600px; 
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 30px;
+  padding: 60px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ===== SECTION TITLE INSIDE BOX ===== */
+
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+/* ===== LAB HERO LAYOUT FIX ===== */
+
+.lab-hero {
+  padding: 80px 20px 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lab-hero-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.lab-hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  color: #e2e8f0;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ================= TOOLS ================= */
+
+.tool-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.tool-card {
+  background: rgba(30, 41, 59, 0.65);
+  padding: 45px;
+  border-radius: 20px;
+  width: 420px;
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+}
+
+.tool-card h2 {
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.tool-card input,
+.tool-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: none;
+}
+
+
+.checkbox-results {
+  margin: 25px 0;
+}
+
+.checkbox-results label {
+  display: flex;
+  align-items: center;      
+  gap: 14px;
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1;          
+}
+
+.checkbox-results input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;                
+  accent-color: #38bdf8;
+}
+
+.tool-btn {
+  padding: 10px 25px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.tool-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56,189,248,0.5);
+}
+
+/* ================= STEGO SECTION ================= */
+
+.stego-section {
+  padding: 100px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.stego-section-inner {
+  width: 100%;
+  max-width: 900px;
+
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 24px;
+  padding: 60px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+}
+
+.stego-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.stego-tabs {
+  margin-bottom: 40px;
+}
+
+.stego-tabs button {
+  padding: 10px 25px;
+  margin: 0 10px;
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.active-tab {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.stego-panel {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.active-panel {
+  display: block;
+}
+
+.stego-panel textarea {
+  height: 100px;
+}

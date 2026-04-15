@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Detective | CyberFun</title>
+
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="./photo/icon.png" alt="CyberFun Logo">
+      <span>CyberFun</span>
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="quiz.html" class="active-link">Quiz</a>
+      <a href="cyberlab.html">Cyber Lab</a>
+    </nav>
+  </header>
+
+  <!-- ================= Security Awareness Quiz Section ================= -->
+  <section class="quiz-section">
+
+    <h1 class="quiz-title">Security Awareness Quiz</h1>
+    <p class="quiz-quote">
+      "Cybersecurity awareness is the strongest firewall against human error."
+    </p>
+
+    <h2 class="quiz-subtitle">Multiple Choice Quiz</h2>
+
+    <div class="quiz-cards">
+
+      <!-- ================= CARD 1 ================= -->
+      <div class="quiz-card">
+
+        <div class="card-content">
+          <h3>Social Engineering Quiz</h3>
+          <p>
+            Test your ability to detect manipulation tactics used by attackers.
+          </p>
+        </div>
+
+        <div class="card-actions">
+          <label>Select Level:</label>
+
+          <select class="level-select" data-quiz="social">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button class="start-btn" data-quiz="social">
+            Start Quiz
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ================= CARD 2 ================= -->
+      <div class="quiz-card">
+
+        <div class="card-content">
+          <h3>Cybersecurity Myths vs Facts</h3>
+          <p>
+            Challenge common security misconceptions and test your knowledge.
+          </p>
+        </div>
+
+        <div class="card-actions">
+          <label>Select Level:</label>
+
+          <select class="level-select" data-quiz="myths">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button class="start-btn" data-quiz="myths">
+            Start Quiz
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ================= CARD 3 ================= -->
+      <div class="quiz-card">
+        <div class="card-content">
+          <h3>Spot the Red Flag</h3>
+          <p>Identify warning signs in emails, links, and messages.</p>
+        </div>
+
+        <div class="card-actions">
+          <label>Select Level:</label>
+          <select class="level-select" data-quiz="spot">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button class="start-btn" data-quiz="spot">Start Quiz</button>
+        </div>
+      </div>
+
+      <!-- Question Display Area -->
+      
+    </div>
+    <div id="quiz-container"></div>
+
+  </section>
+
+
+  <footer>
+    <p>© 2025 CyberFun | Educational Project</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+
+</body>
+
+</html>
