@@ -5,7 +5,7 @@ body {
 
   background:
     linear-gradient(rgba(58, 94, 179, 0.85), rgba(31, 44, 74, 0.95)),
-    url("./photo/cyberlab.jpg");
+    url("../photo/cyberlab.jpg");
 
   background-size: cover;
   background-position: center;
