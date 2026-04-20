@@ -1,20 +1,15 @@
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ================= Security Awareness Quiz ================= */
+/* =====================================================
+   QUIZ SECTION
+===================================================== */
 
 .quiz-section {
-  flex: 1;
+  overflow-x: hidden;
   padding: 100px 30px 80px;
   text-align: center;
-  background: linear-gradient(
-    180deg,
-    #2f3951 0%,
-    #29354e 50%,
-    #1f3f62 100%
-  );
+  background: linear-gradient(180deg,
+      #2f3951 0%,
+      #29354e 50%,
+      #1f3f62 100%);
   color: white;
 }
 
@@ -30,86 +25,431 @@ body {
 }
 
 .quiz-subtitle {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 22px;
+  color: #a1dbc9;
 }
 
+/* =====================================================
+   LAYOUT
+===================================================== */
 
-/* ================= CARD CONTAINER ================= */
-
-.quiz-cards {
+.quiz-layout {
+  max-width: 1500px;
+  margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin: 50px auto;
-  max-width: 1000px; 
+  gap: 80px;
+  align-items: center;
 }
 
-
-/* ================= QUIZ CARD ================= */
-
-.quiz-card {
-  background: #1e293b;
-  padding: 22px 24px;
-  width: 300px;
-  border-radius: 14px;
-
-  display: flex;
-  flex-direction: column;
-
-  min-height: 290px; 
-  transition: all 0.3s ease;
+/* LEFT TEXT */
+.quiz-left {
+  flex: 1.4; 
+  text-align: left;
+  max-width: 500px;
 }
 
-.quiz-card h3 {
-  position: relative;
-  display: inline-block;
+.quiz-left h2 {
+  font-size: 28px;
   margin-bottom: 15px;
 }
 
+.quiz-left p {
+  color: #91b9d2;
+  line-height: 1.6;
+}
+
+.quiz-right {
+  flex: 2.6;  
+  overflow: hidden;
+}
+/* =====================================================
+   CAROUSEL
+===================================================== */
+
+.carousel-wrapper {
+  height: 460px; 
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-controls button {
+  background: rgba(14,165,233,0.9);
+  border: none;
+  color: white;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+/* Modal */
+.leaderboard-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.leaderboard-modal.active {
+  display: flex;
+}
+
+/* Box */
+.leaderboard-box {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 16px;
+  width: 350px;
+}
+
+/* Tabs */
+.leaderboard-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.tab-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.tab-btn.active {
+  background: #38bdf8;
+  color: black;
+}
+
+/* Items */
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Highlight current user */
+.current-user {
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 12px rgba(56,189,248,0.4);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes glowUser {
+  from {
+    box-shadow: 0 0 8px rgba(56,189,248,0.3);
+  }
+  to {
+    box-shadow: 0 0 18px rgba(56,189,248,0.7);
+  }
+}
+
+/* MODAL BOX */
+.leaderboard-box {
+  position: relative;  /* 🔥 REQUIRED */
+
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  padding: 30px;
+  border-radius: 16px;
+  width: 350px;
+}
+
+.result-actions-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ANIMATION */
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* LEADERBOARD ITEMS */
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  background: #1e293b;
+  border-radius: 8px;
+}
+/* =====================================================
+   QUIZ CARD (FIXED)
+===================================================== */
+
+
+/* ALL CARDS */
+.quiz-card {
+  flex: 0 0 260px;   /* slightly wider */
+  height: 300px;     /* 🔥 taller card */
+
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 14px; /* 🔥 more rounded */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: 
+    transform 0.55s ease,
+    box-shadow 0.55s ease,
+    opacity 0.55s ease;
+}
+
+/* CENTER */
+.quiz-card.active {
+  transition: 
+    transform 0.50s ease,
+    box-shadow 0.50s ease,
+    opacity 0.50s ease;
+}
+
+/* active card underline */
+.quiz-card.active h3::after {
+  width: 100%;
+}
+
+/* SIDE */
+.quiz-card.side {
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+
+/* FAR */
+.quiz-card.far {
+  transform: scale(0.85);
+  opacity: 0.2;
+}
+/* LEFT */
+.quiz-card.left-1 {
+  transform: translate3d(calc(-50% - 260px), -50%, 0) rotateY(25deg);
+  opacity: 0.6;
+}
+
+.quiz-card.left-2 {
+  transform: translate3d(calc(-50% - 520px), -50%, -100px) rotateY(40deg);
+  opacity: 0.3;
+}
+
+/* RIGHT */
+.quiz-card.right-1 {
+  transform: translate3d(calc(-50% + 260px), -50%, 0) rotateY(-25deg);
+  opacity: 0.6;
+}
+
+.quiz-card.right-2 {
+  transform: translate3d(calc(-50% + 520px), -50%, -100px) rotateY(-40deg);
+  opacity: 0.3;
+}
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.quiz-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* underline effect */
 .quiz-card h3::after {
   content: "";
   position: absolute;
   left: 50%;
   bottom: -6px;
   transform: translateX(-50%);
-  width: 60%;              
+  width: 60%;
   height: 3px;
   background: #0ea5e9;
   border-radius: 2px;
   box-shadow: 0 0 8px #0ea5e9;
-  transition: width 0.3s ease;
+
+  /* 🔥 ADD THIS */
+  transition: width 0.65s ease, opacity 0.3s ease;
+  opacity: 0.6;
 }
 
-.quiz-card:hover h3::after {
-  width: 100%;            
+.quiz-card.active h3::after {
+  width: 100%;
+  opacity: 1;
 }
 
-.quiz-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
+.quiz-card p {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 15px;
 }
 
+/* =====================================================
+   FORM
+===================================================== */
+
+.level-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0ea5e9;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background: #0284c7;
+}
+
+/* =====================================================
+   QUIZ OUTPUT
+===================================================== */
+
+#quiz-container {
+  max-width: 750px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.question-box {
+  background: #1e293b;
+  overflow: visible;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.question-box {
+  overflow: visible;
+}
+
+.next-btn {
+  display: block;
+}
+
+.option {
+  margin: 12px 0;
+  padding: 12px;
+  background: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #3f4f63;
+}
+
+.option.correct {
+  background: #065f46;
+}
+
+.option.incorrect {
+  background: #7f1d1d;
+}
+
+.explanation {
+  margin-top: 8px;
+  font-size: 14px;
+  padding: 10px;
+  background: #0f172a;
+  border-left: 4px solid #0ea5e9;
+}
 
 /* ================= CARD CONTENT ================= */
 
-.card-content {
-  text-align: center;
+.card-content h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .card-content p {
-  margin-top: 10px;
-  margin-bottom: 18px;
-  font-size: 16px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card-actions label {
+  font-size: 13px;
+  margin-bottom: 6px;
 }
 
 /* ================= CARD ACTIONS (BOTTOM FIXED) ================= */
 
 .card-actions {
   margin-top: auto;
-  text-align: center;
 }
 
 .card-actions label {
@@ -122,9 +462,10 @@ body {
 
 .level-select {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .level-select:focus {
@@ -136,8 +477,8 @@ body {
 
 .start-btn {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 10px;
 }
 
 .start-btn:hover {
@@ -158,7 +499,6 @@ body {
   background: #1e293b;
   padding: 25px;
   border-radius: 12px;
-  text-align: center;
 }
 
 .option {
@@ -191,4 +531,612 @@ body {
   border-radius: 4px;
 }
 
+/* =====================================================
+   MAIN GAME CONTAINER
+===================================================== */
 
+.game-container {
+  width: 1400px;
+  max-width: 100%;
+  height: 650px;
+
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(59, 130, 246, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.game-container-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  /* same as your mail section width */
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #1f2937;
+  border-bottom: 1px solid #374151;
+}
+
+.actions button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.actions button i {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.report-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.safe-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.quit-btn {
+  background: #6b7280;
+  color: white;
+}
+
+.quit-btn:hover {
+  background: #4b5563;
+}
+
+.status {
+  display: flex;
+  gap: 15px;
+}
+
+.badge {
+  background: #10b981;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ===== START OVERLAY ===== */
+
+.start-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+.start-box {
+  background: rgba(17, 24, 39, 0.9);
+  padding: 50px 60px;
+  border-radius: 20px;
+  text-align: center;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.25);
+  animation: scaleIn 0.4s ease forwards;
+}
+
+.start-box h2 {
+  font-size: 28px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.start-box p {
+  color: #cbd5e1;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.start-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* YES BUTTON */
+.start-buttons button:first-child {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start-buttons button:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+}
+
+/* NO BUTTON */
+.start-buttons button:last-child {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start-buttons button:last-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Animations */
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   BODY LAYOUT
+===================================================== */
+
+.container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background: #0f172a;
+  border-right: 1px solid #1f2937;
+  color: #e5e7eb;
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  background: #065f46;
+  color: #ffffff;
+}
+
+/* =====================================================
+   EMAIL LIST
+===================================================== */
+
+.email-list {
+  width: 280px;
+  padding: 15px;
+  overflow-y: auto;
+  min-height: 0;
+  background: #111827;
+  border-right: 1px solid #1f2937;
+}
+
+.email-item {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  background: #1f2937;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.email-item.active {
+  background: #064e3b;
+}
+
+
+/* =====================================================
+   EMAIL CONTENT
+===================================================== */
+
+
+
+.email-content {
+  flex: 1;
+  padding: 35px;
+  margin: 20px;
+  border-radius: 20px;
+
+  background: linear-gradient(145deg,
+      #1e293b,
+      #0f172a);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(59, 130, 246, 0.08);
+
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.email-header {
+  margin-bottom: 20px;
+}
+
+.email-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.email-header p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.email-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #e2e8f0;
+  white-space: pre-line;
+  margin-top: 20px;
+}
+
+.email-link {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dashed #3b82f6;
+  transition: 0.2s;
+}
+
+.email-link:hover {
+  color: #60a5fa;
+  border-bottom: 1px solid #60a5fa;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+===================================================== */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =====================================================
+   RESULT BOX
+===================================================== */
+
+.result-box {
+  position: relative;
+  background: #111827;
+  padding: 60px 40px;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 90%;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.result-box h2 {
+  color: #22c55e;
+}
+
+.result-box p {
+  color: #e5e7eb;
+  margin-top: 10px;
+}
+
+.result-box button {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.result-box button:hover {
+  background: #1d4ed8;
+}
+
+.result-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #1e293b;
+  color: #38bdf8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+
+
+/* =====================================================
+   ICON COLORS
+===================================================== */
+
+.success-icon {
+  color: #22c55e;
+  margin-right: 10px;
+}
+
+.fail-icon {
+  color: #ef4444;
+  margin-right: 10px;
+}
+
+.timeout-icon {
+  color: #f59e0b;
+  margin-right: 10px;
+}
+
+
+/* =====================================================
+   CONFIRM / CANCEL BUTTONS
+===================================================== */
+
+.confirm-btn {
+  background: #ef4444;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #dc2626;
+}
+
+.cancel-btn {
+  background: #22c55e;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #16a34a;
+}
+
+.quiz-page {
+  padding-top: 140px;
+  padding-bottom: 100px;
+
+  background: linear-gradient(to right, #0b1220, #162033);
+
+  display: block;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  top: -10px;
+  animation: fall 2.5s linear forwards;
+}
+
+/* ================= RESULT MODERN UI ================= */
+
+.result-box-modern {
+  text-align: center;
+  padding: 30px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* score text */
+.score-text {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #e2e8f0;
+}
+
+/* button container */
+.result-actions-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 🔥 spacing fix */
+  margin-top: 25px;
+}
+
+/* primary button (Next Quiz) */
+.btn-primary {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #141414;
+  color: #1b1c1c;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-danger {
+  background: #ef4444;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14,165,233,0.4);
+}
+
+/* secondary button (Restart) */
+.btn-secondary {
+  background: #334155;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+/* complete text */
+.complete-text {
+  margin-top: 10px;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(600px) rotate(720deg);
+    opacity: 0;
+  }
+}

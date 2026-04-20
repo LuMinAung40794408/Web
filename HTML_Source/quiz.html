@@ -5,23 +5,86 @@
   <meta charset="UTF-8">
   <title>Phishing Detective | CyberFun</title>
 
+  <!-- Main Website Style -->
   <link rel="stylesheet" href="../CSS_Source/home.css">
-  <link rel="stylesheet" href="../CSS_Source/quiz.css">
+
+  <!-- Game Style -->
+  <link rel="stylesheet" href="../quiz.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
+  <!-- ================= NAVBAR ================= -->
   <header>
     <div class="logo">
       <img src="../photo/icon.png" alt="CyberFun Logo">
       <span>CyberFun</span>
     </div>
+
     <nav>
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="quiz.html" class="active-link">Quiz</a>
+      <a href="quiz.html">Quiz</a>
       <a href="cyberlab.html">Cyber Lab</a>
+
+      <!-- PROFILE DROPDOWN -->
+      <div class="profile-menu">
+
+        <button class="profile-btn" onclick="toggleProfile()">
+          <i class="fa-solid fa-user"></i>
+          <span id="navUser">Login</span>
+        </button>
+
+        <div id="profileDropdown" class="profile-dropdown">
+
+          <!-- LOGIN SECTION -->
+          <div id="loginSection">
+            <h3>Login to beat the leaderboard!</h3>
+
+            <input type="text" id="usernameInput" placeholder="Enter your name">
+
+            <button onclick="loginUser()">Login</button>
+          </div>
+
+          <!-- PROFILE TRACKING -->
+          <div id="profileSection" style="display:none;">
+
+            <h3>Your Cyber Profile</h3>
+
+            <p><strong>Username:</strong> <span id="profileName"></span></p>
+
+            <p><strong>Last Quiz Score:</strong> <span id="lastScore">0</span></p>
+
+            <p><strong>Best Quiz Score:</strong> <span id="bestScore">0</span></p>
+
+            <h4>Achievements</h4>
+
+            <p id="badge_beginner">
+              <i class="fa-solid fa-lock"></i> Cyber Beginner
+            </p>
+
+            <p id="badge_expert">
+              <i class="fa-solid fa-lock"></i> Cyber Expert
+            </p>
+
+            <p id="badge_master">
+              <i class="fa-solid fa-lock"></i> Cyber Master
+            </p>
+
+            <button onclick="openLeaderboard()">
+              <i class="fa-solid fa-trophy"></i> View Leaderboard
+            </button>
+
+            <button onclick="logoutUser()">Logout</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </nav>
   </header>
 
@@ -35,93 +98,267 @@
 
     <h2 class="quiz-subtitle">Multiple Choice Quiz</h2>
 
-    <div class="quiz-cards">
+    <div class="quiz-layout">
 
-      <!-- ================= CARD 1 ================= -->
-      <div class="quiz-card">
+      <!-- LEFT TEXT -->
+      <div class="quiz-left">
+        <h2>Train Your Cyber Awareness</h2>
+        <p>
+          Strengthen your ability to recognize cyber threats through interactive quizzes.
+          Choose a topic and difficulty level to test your knowledge and improve your defense skills.
+        </p>
+      </div>
 
-        <div class="card-content">
-          <h3>Social Engineering Quiz</h3>
-          <p>
-            Test your ability to detect manipulation tactics used by attackers.
-          </p>
-        </div>
+      <!-- RIGHT CAROUSEL -->
+      <div class="quiz-right">
 
-        <div class="card-actions">
-          <label>Select Level:</label>
+        <div class="carousel-wrapper">
 
-          <select class="level-select" data-quiz="social">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
+          <div class="carousel-controls">
+            <button onclick="prev()">◀</button>
+            <button onclick="next()">▶</button>
+          </div>
+          <div class="carousel-track">
 
-          <button class="start-btn" data-quiz="social">
-            Start Quiz
-          </button>
+            <!-- CARD 1 -->
+            <div class="quiz-card">
+              <h3>Social Engineering Quiz</h3>
+              <p>Detect manipulation tactics used by attackers.</p>
+              <label>Select Level:</label>
+              <select class="level-select" data-quiz="social">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <button class="start-btn" data-quiz="social">Start Quiz</button>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="quiz-card">
+              <h3>Cybersecurity Myths vs Facts</h3>
+              <p>Challenge common misconceptions.</p>
+              <select class="level-select" data-quiz="myths">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <button class="start-btn" data-quiz="myths">Start Quiz</button>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="quiz-card">
+              <h3>Spot the Red Flag</h3>
+              <p>Identify phishing and suspicious content.</p>
+              <select class="level-select" data-quiz="spot">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <button class="start-btn" data-quiz="spot">Start Quiz</button>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="quiz-card">
+              <h3>Password Security</h3>
+              <p>Learn authentication best practices.</p>
+              <select class="level-select" data-quiz="password">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <button class="start-btn" data-quiz="password">Start Quiz</button>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="quiz-card">
+              <h3>Safe Browsing</h3>
+              <p>Understand secure internet usage.</p>
+              <select class="level-select" data-quiz="safe">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <button class="start-btn" data-quiz="safe">Start Quiz</button>
+            </div>
+
+          </div>
         </div>
 
       </div>
 
-      <!-- ================= CARD 2 ================= -->
-      <div class="quiz-card">
-
-        <div class="card-content">
-          <h3>Cybersecurity Myths vs Facts</h3>
-          <p>
-            Challenge common security misconceptions and test your knowledge.
-          </p>
-        </div>
-
-        <div class="card-actions">
-          <label>Select Level:</label>
-
-          <select class="level-select" data-quiz="myths">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-
-          <button class="start-btn" data-quiz="myths">
-            Start Quiz
-          </button>
-        </div>
-
-      </div>
-
-      <!-- ================= CARD 3 ================= -->
-      <div class="quiz-card">
-        <div class="card-content">
-          <h3>Spot the Red Flag</h3>
-          <p>Identify warning signs in emails, links, and messages.</p>
-        </div>
-
-        <div class="card-actions">
-          <label>Select Level:</label>
-          <select class="level-select" data-quiz="spot">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-
-          <button class="start-btn" data-quiz="spot">Start Quiz</button>
-        </div>
-      </div>
-
-      <!-- Question Display Area -->
-      
     </div>
+
+    <!-- QUIZ OUTPUT -->
     <div id="quiz-container"></div>
 
+
+    <!-- LEADERBOARD MODAL -->
+    <div id="leaderboardModal" class="leaderboard-modal">
+
+      <div class="leaderboard-box">
+
+        <button class="close-btn" onclick="closeLeaderboard()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Leaderboard</h2>
+
+        <div class="leaderboard-tabs">
+          <button class="tab-btn active" onclick="switchTab(this, 'easy')">Easy</button>
+          <button class="tab-btn" onclick="switchTab(this, 'medium')">Medium</button>
+          <button class="tab-btn" onclick="switchTab(this, 'hard')">Hard</button>
+        </div>
+
+        <!-- Leaderboard List -->
+        <div id="leaderboardList"></div>
+
+      </div>
+
+    </div>
   </section>
 
 
+
+  <!-- ================= QUIZ PAGE ================= -->
+  <section class="quiz-page">
+
+    <div class="game-container-wrapper">
+
+      <!-- ===== BLURRED GAME CONTENT ===== -->
+      <div id="gameContent" class="game-container blurred">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+
+          <div class="actions">
+            <button class="report-btn" onclick="checkAnswer('phishing')">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Report as Phishing
+            </button>
+
+            <button class="safe-btn" onclick="checkAnswer('safe')">
+              <i class="fa-solid fa-user-shield"></i>
+              Mark as Safe
+            </button>
+
+            <button class="quit-btn" onclick="confirmQuit()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Quit
+            </button>
+          </div>
+
+          <div class="status">
+            <div class="badge">
+              Score: <span id="score">0</span>
+            </div>
+            <div class="badge">
+              Time: <span id="timer">120</span>s
+            </div>
+          </div>
+
+        </div>
+
+        <!-- GAME BODY -->
+        <div class="container">
+
+          <!-- Sidebar -->
+          <div class="sidebar">
+            <ul>
+              <li class="active">
+                <i class="fa-solid fa-inbox"></i>
+                Inbox <span class="count">10</span>
+              </li>
+              <li><i class="fa-solid fa-circle-xmark"></i> Junk</li>
+              <li><i class="fa-solid fa-clock"></i> Scheduled</li>
+              <li><i class="fa-solid fa-trash"></i> Deleted</li>
+              <li><i class="fa-solid fa-box-archive"></i> Archive</li>
+            </ul>
+          </div>
+
+          <!-- Email List -->
+          <div class="email-list" id="emailList"></div>
+
+          <!-- Email Content -->
+          <div class="email-content">
+
+            <div class="email-header">
+              <h2 id="subject"></h2>
+
+              <div class="meta">
+                <p><strong>From:</strong> <span id="sender"></span></p>
+                <p><strong>To:</strong> Peter99 &lt;peter@cyberfun.edu.mm&gt;</p>
+                <p><strong>Date:</strong> <span id="date"></span></p>
+              </div>
+            </div>
+
+            <hr class="divider">
+
+            <div id="body" class="email-body"></div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== START OVERLAY (NOT BLURRED) ===== -->
+      <div id="startOverlay" class="start-overlay">
+        <div class="start-box">
+          <h2>
+            <i class="fa-solid fa-shield-halved"></i>
+            Phishing Challenge
+          </h2>
+          <p>
+            Can you detect all phishing emails within
+            <strong>2 minutes</strong>?
+          </p>
+          <div class="start-buttons">
+            <button onclick="startGame()">
+              <i class="fa-solid fa-play"></i> Yes, Start
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ================= RESULT MODAL ================= -->
+      <div id="resultOverlay" class="overlay hidden">
+        <div class="result-box">
+          <button id="resultCloseBtn" class="close-btn" onclick="resumeGame()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <h2 id="resultTitle"></h2>
+          <p id="resultMessage"></p>
+        </div>
+      </div>
+
+      <!-- ================= QUIT MODAL ================= -->
+      <div id="quitOverlay" class="overlay hidden">
+        <div class="result-box">
+          <h2>Quit Game?</h2>
+          <p>Are you sure you want to exit the game?</p>
+
+          <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+            <button class="confirm-btn" onclick="resetToStart()">Yes</button>
+            <button class="cancel-btn" onclick="closeQuit()">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2025 CyberFun | Educational Project</p>
   </footer>
 
-  <script src="../JS_Source/quiz.js"></script>
+  <!-- ================= AUDIO ================= -->
+  <audio id="winSound" src="../sounds/win.mp3" preload="auto"></audio>
+  <audio id="gameOverSound" src="../sounds/gameover.mp3" preload="auto"></audio>
+  <audio id="timeoutSound" src="../sounds/timeout.mp3" preload="auto"></audio>
 
+  <script src="../JS_Source/quiz.js"></script>
+  <script src="home.js"></script>
 </body>
 
 </html>

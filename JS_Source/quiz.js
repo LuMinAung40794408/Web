@@ -1,4 +1,7 @@
+
+
 // ================= QUIZ DATA =================
+
 const quizData = {
   social: {
     easy: [
@@ -768,105 +771,665 @@ const quizData = {
       }
 
     ]
+  },
+  password: {
+
+    // ================= EASY =================
+    easy: [
+
+      {
+        question: "What makes a password strong?",
+        options: [
+          "Short and easy to remember",
+          "Long, complex, and unique",
+          "Using your name and birthdate",
+          "Using the same password everywhere"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Short passwords are easy to guess or brute-force.",
+          "Correct. Strong passwords are long, unique, and include different character types.",
+          "Incorrect. Personal information is easy for attackers to find.",
+          "Incorrect. Reusing passwords increases risk across accounts."
+        ]
+      },
+
+      {
+        question: "Is it safe to use the same password for multiple accounts?",
+        options: [
+          "Yes, if the password is strong",
+          "No, because one breach exposes all accounts",
+          "Yes, if you change it monthly",
+          "Only for social media accounts"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Strength does not protect against reuse attacks.",
+          "Correct. If one account is hacked, all others become vulnerable.",
+          "Incorrect. Changing frequency doesn’t fix reuse risk.",
+          "Incorrect. All accounts should have unique passwords."
+        ]
+      },
+
+      {
+        question: "What is Multi-Factor Authentication (MFA)?",
+        options: [
+          "Using multiple passwords",
+          "Using password + another verification method",
+          "Changing password daily",
+          "Using only fingerprint login"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. MFA is not multiple passwords.",
+          "Correct. MFA combines something you know with something you have or are.",
+          "Incorrect. Frequency is not MFA.",
+          "Incorrect. Biometrics alone is not multi-factor."
+        ]
+      },
+
+      {
+        question: "Which is the safest way to store passwords?",
+        options: [
+          "Write them in a notebook",
+          "Save in browser without protection",
+          "Use a password manager",
+          "Store in phone notes"
+        ],
+        correct: 2,
+        explanations: [
+          "Incorrect. Physical notes can be lost or stolen.",
+          "Incorrect. Browsers can be compromised without encryption.",
+          "Correct. Password managers securely encrypt and store credentials.",
+          "Incorrect. Notes apps are not secure storage."
+        ]
+      },
+
+      {
+        question: "What should you do if your password is leaked?",
+        options: [
+          "Ignore it",
+          "Change it immediately",
+          "Use same password again",
+          "Wait until account is hacked"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Ignoring increases risk.",
+          "Correct. Immediate password change prevents unauthorized access.",
+          "Incorrect. Reusing the same password is dangerous.",
+          "Incorrect. Waiting allows attackers access."
+        ]
+      }
+
+    ],
+
+    // ================= MEDIUM =================
+    medium: [
+
+      {
+        question: "What is a 'brute force attack'?",
+        options: [
+          "Guessing passwords repeatedly until correct",
+          "Stealing passwords via email",
+          "Watching someone type password",
+          "Using fake login pages"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct. Attackers try many combinations until they find the correct password.",
+          "Incorrect. That is phishing.",
+          "Incorrect. That is shoulder surfing.",
+          "Incorrect. That is credential harvesting."
+        ]
+      },
+
+      {
+        question: "Why is MFA important?",
+        options: [
+          "It makes login slower",
+          "It adds an extra security layer",
+          "It replaces passwords",
+          "It works only for banks"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Speed is not the goal.",
+          "Correct. Even if password is stolen, attacker cannot access account without second factor.",
+          "Incorrect. MFA works with passwords, not replaces them.",
+          "Incorrect. MFA is used across many services."
+        ]
+      },
+
+      {
+        question: "What is 'password hashing'?",
+        options: [
+          "Encrypting passwords for storage",
+          "Deleting passwords",
+          "Sharing passwords securely",
+          "Writing passwords backwards"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct. Hashing converts passwords into unreadable fixed values.",
+          "Incorrect. Passwords are not deleted.",
+          "Incorrect. Hashing is not for sharing.",
+          "Incorrect. Reversing text is not security."
+        ]
+      },
+
+      {
+        question: "What is a password manager's main benefit?",
+        options: [
+          "Stores passwords in plain text",
+          "Creates and stores strong unique passwords",
+          "Saves passwords publicly",
+          "Shares passwords automatically"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Secure managers encrypt passwords.",
+          "Correct. They generate strong and unique passwords for each account.",
+          "Incorrect. Passwords are private.",
+          "Incorrect. Sharing is controlled and limited."
+        ]
+      },
+
+      {
+        question: "What is 'credential stuffing'?",
+        options: [
+          "Trying stolen passwords on multiple sites",
+          "Guessing passwords randomly",
+          "Sending phishing emails",
+          "Installing malware"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct. Attackers reuse leaked credentials across services.",
+          "Incorrect. That is brute force.",
+          "Incorrect. That is phishing.",
+          "Incorrect. That is malware attack."
+        ]
+      }
+
+    ],
+
+    // ================= HARD =================
+    hard: [
+
+      {
+        question: "Why are password managers considered secure?",
+        options: [
+          "They store passwords in plain text",
+          "They use encryption and zero-knowledge architecture",
+          "They share passwords across users",
+          "They don’t require authentication"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Secure managers never store plain text passwords.",
+          "Correct. Encryption ensures only the user can access stored passwords.",
+          "Incorrect. Passwords are not publicly shared.",
+          "Incorrect. Access is protected by master password and MFA."
+        ]
+      },
+
+      {
+        question: "What is 'rainbow table attack'?",
+        options: [
+          "Precomputed hashes used to crack passwords",
+          "Color-coded password system",
+          "Random password guessing",
+          "Password encryption method"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct. Attackers use precomputed hash tables to reverse hashes.",
+          "Incorrect. Colors are unrelated.",
+          "Incorrect. This is not brute force.",
+          "Incorrect. It is an attack, not protection."
+        ]
+      },
+
+      {
+        question: "What is the main weakness of SMS-based MFA?",
+        options: [
+          "Too fast",
+          "Vulnerable to SIM swapping attacks",
+          "Too secure",
+          "Works offline"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Speed is not an issue.",
+          "Correct. Attackers can hijack phone numbers via SIM swap.",
+          "Incorrect. No system is perfectly secure.",
+          "Incorrect. SMS requires network access."
+        ]
+      },
+
+      {
+        question: "What is 'keylogging'?",
+        options: [
+          "Recording keystrokes to steal passwords",
+          "Encrypting keyboard input",
+          "Blocking keyboard usage",
+          "Saving passwords safely"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct. Keyloggers capture everything you type, including passwords.",
+          "Incorrect. It does not protect input.",
+          "Incorrect. It does not block typing.",
+          "Incorrect. It is malicious, not protective."
+        ]
+      },
+
+      {
+        question: "Why is 'passphrase' better than a short password?",
+        options: [
+          "Easier to guess",
+          "Longer and harder to brute-force",
+          "Uses fewer characters",
+          "Only works for emails"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect. Passphrases are harder to guess.",
+          "Correct. Length increases security exponentially.",
+          "Incorrect. Passphrases are longer, not shorter.",
+          "Incorrect. Works for any system."
+        ]
+      }
+
+    ]
+
+  },
+  safe: {
+
+    // ================= EASY =================
+    easy: [
+
+      {
+        question: "What does HTTPS indicate in a website URL?",
+        options: [
+          "The website is guaranteed safe",
+          "The connection between you and the site is encrypted",
+          "The website is owned by the government",
+          "The website cannot be hacked"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: HTTPS does not guarantee the site is safe, only that the connection is encrypted.",
+          "Correct: HTTPS encrypts data between your browser and the website.",
+          "Incorrect: HTTPS does not indicate ownership.",
+          "Incorrect: Any website can still be compromised."
+        ]
+      },
+
+      {
+        question: "Is it safe to download files from unknown websites?",
+        options: [
+          "Yes, if the file looks normal",
+          "No, it may contain malware",
+          "Yes, if it is free",
+          "Only if the website has images"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: File appearance does not guarantee safety.",
+          "Correct: Unknown downloads may contain malware or viruses.",
+          "Incorrect: Free files are often used as bait.",
+          "Incorrect: Images do not indicate safety."
+        ]
+      },
+
+      {
+        question: "What should you do before clicking a link?",
+        options: [
+          "Click immediately",
+          "Hover over it to check the real URL",
+          "Share it with friends",
+          "Ignore it always"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Clicking blindly can lead to phishing sites.",
+          "Correct: Hovering reveals the actual destination of the link.",
+          "Incorrect: Sharing spreads potential threats.",
+          "Incorrect: Not all links are dangerous."
+        ]
+      },
+
+      {
+        question: "What is a 'pop-up scam'?",
+        options: [
+          "A helpful notification",
+          "A fake alert designed to trick users",
+          "A browser feature",
+          "A type of antivirus"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Scam pop-ups are not helpful.",
+          "Correct: Pop-up scams create fake warnings to trick users.",
+          "Incorrect: Browsers do not generate scam messages.",
+          "Incorrect: Antivirus software does not behave like this."
+        ]
+      },
+
+      {
+        question: "What should you do if a website looks suspicious?",
+        options: [
+          "Continue browsing",
+          "Enter your details quickly",
+          "Leave the website immediately",
+          "Download files to check"
+        ],
+        correct: 2,
+        explanations: [
+          "Incorrect: Staying increases risk.",
+          "Incorrect: Entering data exposes your information.",
+          "Correct: Leaving prevents potential attacks.",
+          "Incorrect: Downloads may contain malware."
+        ]
+      }
+
+    ],
+
+    // ================= MEDIUM =================
+    medium: [
+
+      {
+        question: "What is a 'drive-by download'?",
+        options: [
+          "Downloading files manually",
+          "Automatic malware download without user consent",
+          "Downloading from USB",
+          "Downloading safe software"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Manual downloads require user action.",
+          "Correct: Malware installs automatically when visiting a malicious site.",
+          "Incorrect: USB attacks are different.",
+          "Incorrect: Safe software is unrelated."
+        ]
+      },
+
+      {
+        question: "Why are shortened URLs risky?",
+        options: [
+          "They load slowly",
+          "They hide the real destination",
+          "They are always safe",
+          "They improve security"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Speed is not the issue.",
+          "Correct: Attackers use shortened links to hide malicious URLs.",
+          "Incorrect: Shortened links are not inherently safe.",
+          "Incorrect: They do not improve security."
+        ]
+      },
+
+      {
+        question: "What is a 'fake website' used for?",
+        options: [
+          "Improving user experience",
+          "Stealing user credentials",
+          "Providing faster service",
+          "Displaying ads"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Fake sites are not for user benefit.",
+          "Correct: Attackers create fake sites to collect login details.",
+          "Incorrect: Speed is irrelevant.",
+          "Incorrect: Ads are not the main goal."
+        ]
+      },
+
+      {
+        question: "What is the safest way to verify a website?",
+        options: [
+          "Check URL carefully",
+          "Trust the design",
+          "Look at colors",
+          "Check if it loads fast"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct: The URL is the most reliable indicator of legitimacy.",
+          "Incorrect: Design can be copied.",
+          "Incorrect: Colors mean nothing.",
+          "Incorrect: Speed does not indicate safety."
+        ]
+      },
+
+      {
+        question: "Why should you avoid clicking unknown ads?",
+        options: [
+          "They are boring",
+          "They may redirect to malicious sites",
+          "They load slowly",
+          "They waste time only"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: The issue is security, not interest.",
+          "Correct: Ads can redirect to phishing or malware sites.",
+          "Incorrect: Speed is not the main risk.",
+          "Incorrect: They pose security threats, not just time loss."
+        ]
+      }
+
+    ],
+
+    // ================= HARD =================
+    hard: [
+
+      {
+        question: "What is a Man-in-the-Middle (MITM) attack?",
+        options: [
+          "Attacker intercepts communication between user and website",
+          "Deleting files remotely",
+          "Sending phishing emails",
+          "Installing antivirus"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct: MITM intercepts and possibly alters communication.",
+          "Incorrect: File deletion is unrelated.",
+          "Incorrect: That is phishing.",
+          "Incorrect: Antivirus is defensive."
+        ]
+      },
+
+      {
+        question: "Why is public Wi-Fi risky?",
+        options: [
+          "Slow speed",
+          "Attackers can intercept data",
+          "Limited access",
+          "Expensive usage"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Speed is not the main risk.",
+          "Correct: Attackers can monitor traffic on unsecured networks.",
+          "Incorrect: Access limitations are not security threats.",
+          "Incorrect: Cost is unrelated."
+        ]
+      },
+
+      {
+        question: "What is 'malvertising'?",
+        options: [
+          "Malicious advertisements spreading malware",
+          "Blocking ads",
+          "Safe advertising",
+          "Email marketing"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct: Malvertising uses ads to distribute malware.",
+          "Incorrect: Blocking ads is protective.",
+          "Incorrect: Safe ads do not spread malware.",
+          "Incorrect: Marketing emails are unrelated."
+        ]
+      },
+
+      {
+        question: "Why should you check website certificates?",
+        options: [
+          "To verify legitimacy of site",
+          "To increase speed",
+          "To download files",
+          "To change password"
+        ],
+        correct: 0,
+        explanations: [
+          "Correct: Certificates help verify authenticity of the website.",
+          "Incorrect: Certificates do not affect speed.",
+          "Incorrect: Certificates are unrelated to downloads.",
+          "Incorrect: They do not manage passwords."
+        ]
+      },
+
+      {
+        question: "What is the biggest risk of entering credentials on fake sites?",
+        options: [
+          "Slow performance",
+          "Account compromise",
+          "Website crash",
+          "Data deletion"
+        ],
+        correct: 1,
+        explanations: [
+          "Incorrect: Performance is not the issue.",
+          "Correct: Attackers gain access to your accounts.",
+          "Incorrect: Crashes are unrelated.",
+          "Incorrect: Data deletion is not the primary risk."
+        ]
+      }
+
+    ]
   }
 };
 
 
+const ALL_QUIZZES = ["social", "myths", "spot", "password", "safe"];
 
+let currentQuizType = "";
+let currentLevel = "";
 // ================= QUIZ LOGIC =================
-const quizContainer = document.getElementById("quiz-container");
+const quizContainer = document.getElementById("quiz-container") || null;
 
 let currentQuestions = [];
 let currentIndex = 0;
 let score_q = 0;
-let answered = false;
-
-/* ================= START QUIZ ================= */
 
 document.querySelectorAll(".start-btn").forEach(btn => {
   btn.addEventListener("click", function () {
 
-    const quizType = this.dataset.quiz;
     const select = this.parentElement.querySelector(".level-select");
-    const level = select.value;
+    currentQuizType = this.dataset.quiz;
+    currentLevel = select.value;
 
-    currentQuestions = quizData[quizType][level];
+    let completedCount = getCompletedCount(currentLevel);
+
+    currentQuestions = quizData[currentQuizType][currentLevel];
     currentIndex = 0;
     score_q = 0;
 
     showQuestion();
-
-    // Scroll to question area
-    quizContainer.scrollIntoView({ behavior: "smooth" });
   });
 });
 
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".quiz-card");
 
-/* ================= SHOW QUESTION ================= */
+let index = 0;
 
-function showQuestion() {
+function updateCarousel() {
+  const cardWidth = 300;
+  const centerOffset = (track.parentElement.offsetWidth / 2) - (cardWidth / 2);
 
-  quizContainer.innerHTML = "";
-  answered = false;
+  track.style.transform =
+    `translateX(${centerOffset - index * cardWidth}px)`;
 
-  if (currentIndex >= currentQuestions.length) {
-    showResult();
-    return;
-  }
+  cards.forEach((card, i) => {
+    card.classList.remove("active", "side", "far");
 
-  const q = currentQuestions[currentIndex];
-
-  const box = document.createElement("div");
-  box.classList.add("question-box");
-
-  box.innerHTML = `
-    <h3>Question ${currentIndex + 1} of ${currentQuestions.length}</h3>
-    <p>${q.question}</p>
-    <div id="options-area"></div>
-    <p id="warning" style="color:#f87171; display:none; margin-top:10px;">
-      Please choose an answer first.
-    </p>
-    <button id="next-btn" class="start-btn" style="margin-top:20px;">
-      ${currentIndex === currentQuestions.length - 1 ? "Finish Quiz" : "Next Question"}
-    </button>
-  `;
-
-  const optionsArea = box.querySelector("#options-area");
-
-  q.options.forEach((option, index) => {
-
-    const optionDiv = document.createElement("div");
-    optionDiv.classList.add("option");
-    optionDiv.textContent = option;
-
-    optionDiv.addEventListener("click", () => handleAnswer(optionDiv, index, q));
-
-    optionsArea.appendChild(optionDiv);
-  });
-
-  quizContainer.appendChild(box);
-
-  const nextBtn = document.getElementById("next-btn");
-  const warning = document.getElementById("warning");
-
-  nextBtn.addEventListener("click", () => {
-
-    if (!answered) {
-      warning.style.display = "block";
-      return;
+    if (i === index) {
+      card.classList.add("active");
+    } else if (Math.abs(i - index) === 1) {
+      card.classList.add("side");
+    } else {
+      card.classList.add("far");
     }
-
-    currentIndex++;
-    showQuestion();
   });
 }
 
+function next() {
+  index = (index + 1) % cards.length;
+  updateCarousel();
+}
 
-/* ================= HANDLE ANSWER ================= */
+function prev() {
+  index = (index - 1 + cards.length) % cards.length;
+  updateCarousel();
+}
+
+updateCarousel();
+
+
+function startQuiz(type, level) {
+
+  console.log("Start Quiz:", type, level); // debug
+
+  currentQuizType = type;
+  currentLevel = level;
+
+  currentIndex = 0;
+  score_q = 0;
+
+  if (!quizData[type]) {
+    console.error("Quiz type not found:", type);
+    return;
+  }
+
+  if (!quizData[type][level]) {
+    console.error("Level not found:", level);
+    return;
+  }
+
+  currentQuestions = quizData[type][level];
+
+  showQuestion();
+}
+
+function resetLevelProgress(level) {
+
+  let username = localStorage.getItem("username");
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (!allUsers[username]) return;
+
+  let userData = allUsers[username];
+
+  for (let key in userData.quizScores) {
+    if (key.endsWith("_" + level)) {
+      delete userData.quizScores[key];
+    }
+  }
+
+  localStorage.setItem("usersData", JSON.stringify(allUsers));
+}
 
 function handleAnswer(selectedOption, index, questionData) {
-
-  answered = true;
 
   const allOptions = document.querySelectorAll(".option");
   allOptions.forEach(opt => opt.style.pointerEvents = "none");
@@ -882,20 +1445,1075 @@ function handleAnswer(selectedOption, index, questionData) {
   const explanation = document.createElement("div");
   explanation.classList.add("explanation");
   explanation.textContent = questionData.explanations[index];
-
   selectedOption.appendChild(explanation);
+
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = currentIndex === currentQuestions.length - 1 ? "Finish Quiz" : "Next Question";
+  nextBtn.classList.add("start-btn");
+  nextBtn.style.marginTop = "15px";
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    showQuestion();
+  });
+
+  quizContainer.appendChild(nextBtn);
 }
+
+function getNextQuiz(level) {
+
+  let username = localStorage.getItem("username");
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+  let userData = allUsers[username] || {};
+
+  let completed = userData.quizScores || {};
+
+  let allQuizzes = ["social", "myths", "spot", "password", "safe"];
+
+  for (let quiz of allQuizzes) {
+    let quizId = quiz + "_" + level;
+
+    if (!(quizId in completed)) {
+      return quiz;
+    }
+  }
+
+  return null;
+}
+
+function getCompletedCount(level) {
+
+  let username = localStorage.getItem("username");
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (!allUsers[username]) return 0;
+
+  let scores = allUsers[username].quizScores || {};
+
+  let count = 0;
+
+  for (let key in scores) {
+    if (key.endsWith("_" + level)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+/* ================= QUIZ DISPLAY ================= */
+
+function showQuestion() {
+
+  if (quizContainer) {
+    quizContainer.innerHTML = "";
+  }
+
+  if (currentIndex >= currentQuestions.length) {
+    showResult();
+    return;
+  }
+
+  const q = currentQuestions[currentIndex];
+
+  const box = document.createElement("div");
+  box.classList.add("question-box");
+
+  box.innerHTML = `
+    <h3>Question ${currentIndex + 1} of ${currentQuestions.length}</h3>
+    <p>${q.question}</p>
+  `;
+
+  q.options.forEach((option, index) => {
+    const optionDiv = document.createElement("div");
+    optionDiv.classList.add("option");
+    optionDiv.textContent = option;
+
+    optionDiv.addEventListener("click", () => handleAnswer(optionDiv, index, q));
+
+    box.appendChild(optionDiv);
+  });
+
+  quizContainer.appendChild(box);
+}
+
 
 
 /* ================= SHOW RESULT ================= */
 
+
 function showResult() {
 
+  console.log("showResult triggered"); // DEBUG
+
+  const quizId = currentQuizType + "_" + currentLevel;
+
+  completeQuiz(quizId, score_q, currentLevel);
+
+  let username = localStorage.getItem("username");
+
+  finalizeScore(username, currentLevel);
+
+  let completedCount = getCompletedCount(currentLevel);
+  let nextQuiz = getNextQuiz(currentLevel);
+
   quizContainer.innerHTML = `
-    <div class="question-box">
-      <h3>Quiz Completed!</h3>
+    <div class="question-box result-box-modern">
+
+      <h3><i class="fa-solid fa-party-horn"></i> Quiz Completed!</h3>
+
       <p>Your Score: ${score_q} / ${currentQuestions.length}</p>
-      <button class="start-btn" onclick="location.reload()">Restart Quiz</button>
+
+      <p style="color:#38bdf8;">
+        Progress: ${completedCount} / 5 quizzes completed
+      </p>
+
+      <div class="result-actions-modern">
+
+  <button class="btn-secondary" onclick="restartCurrentQuiz()">
+    <i class="fa-solid fa-rotate"></i> Retry This Quiz
+  </button>
+
+  ${completedCount === 5 ? `
+    <button class="btn-primary" onclick="openLeaderboard()">
+      <i class="fa-solid fa-trophy"></i> View Leaderboard
+    </button>
+
+    <button class="btn-danger" onclick="resetAllProgress()">
+      <i class="fa-solid fa-arrows-rotate"></i> Start New Attempt
+    </button>
+
+    <p class="complete-text"><i class="fa-solid fa-bullseye"></i> All quizzes completed!</p>
+  ` : `
+    <button class="btn-primary" onclick="goToNextQuiz('${nextQuiz}')">
+      <i class="fa-solid fa-arrow-right"></i> Next Quiz
+    </button>
+  `}
+
+</div>
+
     </div>
   `;
+}
+
+function goToNextQuiz(nextQuiz) {
+
+  currentQuizType = nextQuiz;
+
+  currentIndex = 0;
+  score_q = 0;
+
+  currentQuestions = quizData[currentQuizType][currentLevel];
+
+  showQuestion();
+}
+
+function restartCurrentQuiz() {
+
+  // reset values
+  currentIndex = 0;
+  score_q = 0;
+
+  // reload same quiz
+  currentQuestions = quizData[currentQuizType][currentLevel];
+
+  showQuestion();
+}
+
+function resetAllProgress() {
+
+  let username = localStorage.getItem("username");
+  if (!username) return;
+
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (allUsers[username]) {
+    allUsers[username].quizScores = {};
+  }
+
+  localStorage.setItem("usersData", JSON.stringify(allUsers));
+
+  location.reload();
+}
+/* ================= QUIZ SYSTEM ================= */
+
+function completeQuiz(quizId, score, level) {
+
+  let username = localStorage.getItem("username");
+  if (!username) return;
+
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (!allUsers[username]) {
+    allUsers[username] = {
+      lastScore: 0,
+      bestScore: 0,
+      quizScores: {}
+    };
+  }
+
+  let userData = allUsers[username];
+
+  // ONLY store per quiz
+  userData.quizScores[quizId] = score;
+  userData.lastScore = score;
+
+  allUsers[username] = userData;
+
+  localStorage.setItem("usersData", JSON.stringify(allUsers));
+}
+
+function ensureUserData() {
+
+  let username = localStorage.getItem("username");
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (!allUsers[username]) {
+    allUsers[username] = {
+      lastScore: 0,
+      bestScore: 0,
+      quizScores: {}
+    };
+
+    localStorage.setItem("usersData", JSON.stringify(allUsers));
+  }
+
+  return allUsers;
+}
+
+/* ================= FINAL SCORE ================= */
+
+function isAllQuizCompleted(userData) {
+  return Object.keys(userData.quizScores).length === 5;
+}
+
+function calculateTotalScore(userData) {
+
+  let total = 0;
+
+  for (let key in userData.quizScores) {
+    total += userData.quizScores[key];
+  }
+
+  return total;
+}
+
+
+function finalizeScore(username, level){
+
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+  let userData = allUsers[username];
+
+  if(!userData) return;
+
+  let levelScores = Object.entries(userData.quizScores)
+    .filter(([key]) => key.endsWith("_" + level));
+
+  if(levelScores.length !== 5) return;
+
+  let total = levelScores.reduce((sum, [_, val]) => sum + val, 0);
+
+  // update scores
+  userData.lastScore = total;
+
+  if(total > (userData["best_" + level] || 0)){
+    userData["best_" + level] = total;
+  }
+
+  // ===== BADGE LOGIC =====
+  if (total === 25) {
+
+    if (level === "easy") userData.badge_beginner = true;
+    if (level === "medium") userData.badge_expert = true;
+    if (level === "hard") userData.badge_master = true;
+
+  }
+
+  allUsers[username] = userData;
+  localStorage.setItem("usersData", JSON.stringify(allUsers));
+}
+
+
+/* ================= RESET SYSTEM ================= */
+
+function resetAllQuizProgress() {
+
+  let username = localStorage.getItem("username");
+
+  if (!username) return;
+
+  let allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+
+  if (allUsers[username]) {
+    allUsers[username].quizScores = {};
+  }
+
+  localStorage.setItem("usersData", JSON.stringify(allUsers));
+
+  alert("Progress reset! You can try again.");
+}
+
+function loadLeaderboardByLevel(level) {
+
+  const container = document.getElementById("leaderboardList");
+  if (!container) return;
+
+  const allUsers = JSON.parse(localStorage.getItem("usersData")) || {};
+  const currentUser = localStorage.getItem("username");
+
+  let leaderboard = [];
+
+  for (let user in allUsers) {
+
+    let score = allUsers[user]["best_" + level] || 0;
+
+    if (score <= 0) continue;
+
+    leaderboard.push({
+      name: user,
+      score: score
+    });
+  }
+
+  leaderboard.sort((a, b) => b.score - a.score);
+
+  container.innerHTML = "";
+
+  leaderboard.slice(0, 5).forEach((user, index) => {
+
+    let icon = "";
+
+    if (index === 0) {
+      icon = '<i class="fa-solid fa-crown" style="color:#facc15;"></i>';
+    } else if (index === 1) {
+      icon = '<i class="fa-solid fa-medal" style="color:#cbd5e1;"></i>';
+    } else if (index === 2) {
+      icon = '<i class="fa-solid fa-medal" style="color:#cd7f32;"></i>';
+    } else {
+      icon = `#${index + 1}`;
+    }
+
+    let highlight = user.name === currentUser ? "current-user" : "";
+
+    container.innerHTML += `
+      <div class="leaderboard-item ${highlight}">
+        <span>${icon} ${user.name}</span>
+        <span>${user.score}</span>
+      </div>
+    `;
+  });
+}
+
+function openLeaderboard() {
+  document.getElementById("leaderboardModal").classList.add("active");
+
+  // default = easy
+  loadLeaderboardByLevel("easy");
+}
+
+function closeLeaderboard() {
+  document.getElementById("leaderboardModal").classList.remove("active");
+}
+
+function switchTab(btn, level) {
+
+  // remove active from all
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+  // set active
+  btn.classList.add("active");
+
+  loadLeaderboardByLevel(level);
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= Phishing Email PAGE ================= */
+
+let score = 0;
+let timeLeft = 120;
+let timerInterval;
+let selectedIndex = 0;
+
+
+const originalEmails = [
+  {
+    sender: "IT Support",
+    email: "partners@externalsolutions.com",
+    subject: "Scheduled System Maintenance",
+    body: `
+Dear colleagues,
+
+Routine system maintenance is scheduled for this Saturday between 01:00 AM and 03:00 AM.
+
+During this period, VPN and internal systems may be temporarily unavailable.
+
+No action is required from your side.
+
+If you have any urgent concerns, please contact the IT helpdesk.
+
+Kind regards,  
+IT Support Team
+`,
+    answer: "safe"
+  },
+
+  {
+    sender: "Learning & Development",
+    email: "learning@yourcompany.com",
+    subject: "Reminder: Cybersecurity Awareness Workshop",
+    body: `
+Dear Robin,
+
+This is a reminder that the Cybersecurity Awareness Workshop will take place tomorrow at 2:00 PM in Conference Room B.
+
+The session will cover phishing detection techniques, password security, and reporting suspicious emails.
+
+Please confirm your attendance via the internal training portal.
+
+Best regards,  
+Learning & Development Team
+`,
+    answer: "safe"
+  },
+
+  {
+    sender: "Riley Thompson",
+    email: "rthompson@biztechsolutions.com",
+    subject: "Follow-up: Senior Security Consultant Role",
+    body: `
+Dear Robin,
+
+I hope this message finds you well.
+
+We are currently recruiting for a Senior Security Consultant role, and your background closely matches the required experience.
+
+The position focuses on enterprise security strategy and cloud governance initiatives.
+
+Would you be available next Wednesday at 10 AM for a brief discussion?
+
+Kind regards,  
+Riley Thompson  
+BizTech Solutions
+`,
+    answer: "safe"
+  },
+
+  {
+    sender: "Finance Department",
+    email: "finance@yourcompany.com",
+    subject: "Quarterly Budget Review Documents",
+    body: `
+Dear Robin,
+
+Attached are the financial summaries and projections for the Q3 budget review.
+
+Kindly review the documents prior to Thursday’s meeting.
+
+Please let me know if you require any clarification.
+
+Best regards,  
+Finance Department
+`,
+    answer: "safe"
+  },
+
+  {
+    sender: "Catherine Mitchell",
+    email: "cmitchell@yourcompany.com",
+    subject: "Delta Initiative – Project Leadership",
+    body: `
+Hi Robin,
+
+Following our recent leadership meeting, we would like you to take the lead on the upcoming Delta initiative.
+
+Your expertise in AI-based security systems will be highly valuable to the project’s success.
+
+Let me know your availability for a short briefing tomorrow.
+
+Best regards,  
+Catherine Mitchell  
+Director of Operations
+`,
+    answer: "safe"
+  },
+
+  /* ================= PHISHING ================= */
+
+  {
+    sender: "autoreminder",
+    email: "autoreminder@offlce365-online.com",
+    subject: "Office 365 Account Expiration Notice",
+    body: `
+Dear customer,
+
+Please note that your Office 365 account will expire in 3 days.
+
+To avoid interruption of your email and Teams services, renew your account immediately by visiting:
+
+https://office365-renew-account.com
+
+Sign in with your Office 365 credentials and select "Renew Account".
+
+Failure to take action may result in your Office applications switching to restricted read-only mode.
+
+As a reminder, your account name is:
+r****@yourcompany.com
+
+Yours faithfully,  
+Office365 Support Team
+`,
+    answer: "phishing"
+  },
+
+  {
+    sender: "Microsoft Security",
+    email: "security@microsoft-account-alerts.com",
+    subject: "Action Required: Suspicious Login Attempt",
+    body: `
+Dear Robin,
+
+We detected a suspicious login attempt to your Microsoft account from an unknown location.
+
+For your protection, please verify your identity at the secure link below:
+
+https://microsoft-security-review.com
+
+Failure to verify within 24 hours may result in account suspension.
+
+Microsoft Account Protection Team
+`,
+    answer: "phishing"
+  },
+
+  {
+    sender: "Microsoft Teams",
+    email: "invite@teams-online365.com",
+    subject: "You've Been Invited to a Teams Meeting",
+    body: `
+Hello Robin,
+
+You have been invited to join a Microsoft Teams meeting titled:
+
+"Executive Strategy Review"
+
+Please access the meeting using the secure link below:
+
+https://teams-secure-join365.com
+
+You may be required to sign in with your company credentials.
+
+Microsoft Teams Support
+`,
+    answer: "phishing"
+  },
+
+  {
+    sender: "Payroll Department",
+    email: "payroll@yourcompany-secure.net",
+    subject: "Payroll Discrepancy – Immediate Attention Required",
+    body: `
+Dear Robin,
+
+During our monthly audit, we identified a discrepancy in your payroll information.
+
+Please review and confirm your banking details at the secure portal below:
+
+https://yourcompany-payroll-secure.net/update
+
+Failure to confirm within 48 hours may result in delayed salary processing.
+
+Payroll Administration
+`,
+    answer: "phishing"
+  },
+
+  {
+    sender: "Google Drive",
+    email: "drive-share@googledocs-secure.net",
+    subject: "Shared Document: Budget Forecast 2024",
+    body: `
+Hello,
+
+A confidential document has been shared with you:
+
+"Budget Forecast 2024.xlsx"
+
+Access the file using the secure link below:
+
+https://googledrive-secure-access.net/document?id=88214
+
+Sign in with your company email to continue.
+
+Google Drive Team
+`,
+    answer: "phishing"
+  }
+];
+let emails = [...originalEmails];
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderInbox();
+});
+
+document.addEventListener("click", function unlockAudio() {
+  const sound = document.getElementById("winSound");
+
+  if (sound) {
+    sound.play().then(() => {
+      sound.pause();
+      sound.currentTime = 0;
+    }).catch(() => { });
+  }
+
+  document.removeEventListener("click", unlockAudio);
+});
+
+
+/* ===============================
+   RENDER INBOX
+================================= */
+
+function renderInbox() {
+  const list = document.getElementById("emailList");
+  list.innerHTML = "";
+
+  emails.forEach((email, index) => {
+    const div = document.createElement("div");
+    div.classList.add("email-item");
+
+    if (index === selectedIndex) {
+      div.classList.add("active");
+    }
+
+    div.innerHTML = `
+      <strong>${email.sender}</strong><br>
+      <small>${email.subject}</small>
+    `;
+
+    div.onclick = () => {
+      selectedIndex = index;
+      renderInbox();
+      showEmail();
+    };
+
+    list.appendChild(div);
+  });
+
+  document.querySelector(".count").innerText = emails.length;
+
+  showEmail();
+}
+
+
+/* ===============================
+   SHOW EMAIL
+================================= */
+
+function showEmail() {
+  if (emails.length === 0) {
+    endGame("finished");
+    return;
+  }
+
+  const email = emails[selectedIndex];
+
+  document.getElementById("sender").innerText =
+    email.sender + " <" + email.email + ">";
+
+  document.getElementById("subject").innerText = email.subject;
+
+  document.getElementById("body").innerHTML =
+    formatLinks(email.body);
+
+  const today = new Date();
+  document.getElementById("date").innerText =
+    today.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+}
+
+
+/* ===============================
+   FORMAT LINKS
+================================= */
+
+function formatLinks(text) {
+  const urlPattern = /(https?:\/\/[^\s]+)/g;
+
+  return text.replace(urlPattern, url =>
+    `<a href="${url}" target="_blank" class="email-link">${url}</a>`
+  );
+}
+
+
+/* ===============================
+   CHECK ANSWER
+================================= */
+
+function checkAnswer(choice) {
+  if (emails.length === 0) return;
+
+  const email = emails[selectedIndex];
+
+  if (choice === email.answer) {
+    score++;
+    document.getElementById("score").innerText = score;
+  }
+
+  emails.splice(selectedIndex, 1);
+
+  if (selectedIndex >= emails.length) {
+    selectedIndex = emails.length - 1;
+  }
+
+  if (selectedIndex < 0) {
+    selectedIndex = 0;
+  }
+
+  renderInbox();
+}
+
+
+/* ===============================
+   Start Game
+================================= */
+
+function startGame() {
+  document.getElementById("startOverlay").style.display = "none";
+  document.getElementById("gameContent").classList.remove("blurred");
+  startTimer();
+}
+
+/* ===============================
+   TIMER
+================================= */
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+
+    timeLeft--;
+    document.getElementById("timer").innerText = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      endGame("timeout");
+    }
+
+  }, 1000);
+}
+
+
+/* ===============================
+   END GAME
+================================= */
+
+function endGame(reason = "finished") {
+  const closeBtn = document.getElementById("resultCloseBtn");
+  if (closeBtn) closeBtn.style.display = "none";
+
+  clearInterval(timerInterval);
+
+  const overlay = document.getElementById("resultOverlay");
+  const title = document.getElementById("resultTitle");
+  const message = document.getElementById("resultMessage");
+
+  overlay.classList.remove("hidden");
+
+  title.classList.remove("success-title", "fail-title", "timeout-title");
+
+  // SUCCESS
+
+  if (score === 10 && reason === "finished") {
+
+    title.innerHTML = `
+    <i class="fa-solid fa-shield-halved success-icon"></i>
+    Congratulations!
+  `;
+
+    message.innerHTML = `
+    Perfect score! You passed the game.<br>
+    Score: ${score} / 10
+    <br><br>
+    <strong>Do you want to play again?</strong>
+    <div class="result-actions">
+      <button class="confirm-btn" onclick="restartGame()">Yes</button>
+      <button class="cancel-btn" onclick="returnToStart()">No</button>
+    </div>
+  `;
+
+    playSuccessSound();
+    triggerConfetti();
+  }
+  // TIMEOUT
+  else if (reason === "timeout") {
+
+    title.innerHTML = `
+    <i class="fa-solid fa-clock timeout-icon"></i>
+    Time Out!
+  `;
+
+    message.innerHTML = `
+    You ran out of time.<br>
+    Score: ${score} / 10
+    <br><br>
+    <strong>Do you want to play again?</strong>
+    <div class="result-actions">
+      <button class="confirm-btn" onclick="restartGame()">Yes</button>
+      <button class="cancel-btn" onclick="returnToStart()">No</button>
+    </div>
+  `;
+
+    playTimeoutSound();
+  }
+
+  // FAIL
+  else {
+
+    title.innerHTML = `
+    <i class="fa-solid fa-circle-xmark fail-icon"></i>
+    Game Over
+  `;
+
+    message.innerHTML = `
+    You did not get all answers correct.<br>
+    Score: ${score} / 10
+    <br><br>
+    <strong>Do you want to play again?</strong>
+    <div class="result-actions">
+      <button class="confirm-btn" onclick="restartGame()">Yes</button>
+      <button class="cancel-btn" onclick="returnToStart()">No</button>
+    </div>
+  `;
+
+    playGameOverSound();
+  }
+}
+
+
+/* ===============================
+   RESTART GAME
+================================= */
+
+function restartGame() {
+
+  document.getElementById("resultCloseBtn").style.display = "flex";
+  document.getElementById("resultOverlay").classList.add("hidden");
+
+  clearInterval(timerInterval);
+
+  score = 0;
+  timeLeft = 120;
+  selectedIndex = 0;
+
+  document.getElementById("score").innerText = score;
+  document.getElementById("timer").innerText = timeLeft;
+
+  emails = [...originalEmails];
+  emails.sort(() => Math.random() - 0.5);
+
+  renderInbox();
+  startTimer();
+}
+
+
+/* ===============================
+   SOUND FUNCTIONS
+================================= */
+function playSuccessSound() {
+  const sound = document.getElementById("winSound");
+  if (!sound) return;
+  sound.currentTime = 0;
+  sound.play().catch(() => { });
+}
+
+function playGameOverSound() {
+  const sound = document.getElementById("gameOverSound");
+  if (!sound) return;
+  sound.currentTime = 0;
+  sound.play().catch(() => { });
+}
+
+function playTimeoutSound() {
+  const sound = document.getElementById("timeoutSound");
+  if (!sound) return;
+  sound.currentTime = 0;
+  sound.play().catch(() => { });
+}
+
+/* ===============================
+   CONFETTI + SOUND
+================================= */
+
+function playSuccessSound() {
+  const sound = document.getElementById("winSound");
+
+  if (!sound) {
+    console.log("Audio not found!");
+    return;
+  }
+
+  sound.currentTime = 0;
+
+  sound.play().catch(error => {
+    console.log("Audio blocked:", error);
+  });
+}
+
+function triggerConfetti() {
+
+  const overlay = document.getElementById("resultOverlay");
+  const container = document.createElement("div");
+  container.classList.add("success-confetti");
+
+  overlay.appendChild(container);
+
+  for (let i = 0; i < 60; i++) {
+
+    const piece = document.createElement("div");
+    piece.classList.add("confetti-piece");
+
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.backgroundColor = getRandomColor();
+    piece.style.animationDuration =
+      (Math.random() * 2 + 1.5) + "s";
+
+    container.appendChild(piece);
+  }
+
+  setTimeout(() => {
+    container.remove();
+  }, 3000);
+}
+
+function getRandomColor() {
+  const colors = ["#22c55e", "#3b82f6", "#f59e0b", "#ef4444", "#a855f7"];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+
+/* ===============================
+   QUIT GAME
+================================= */
+
+function confirmQuit() {
+  document.getElementById("quitOverlay").classList.remove("hidden");
+}
+
+function closeQuit() {
+  document.getElementById("quitOverlay").classList.add("hidden");
+}
+
+function quitGame() {
+
+  // Pause timer (not reset)
+  clearInterval(timerInterval);
+
+  const overlay = document.getElementById("resultOverlay");
+  const title = document.getElementById("resultTitle");
+  const message = document.getElementById("resultMessage");
+
+  overlay.classList.remove("hidden");
+
+  title.innerHTML = `
+    <i class="fa-solid fa-door-open fail-icon"></i>
+    You Quit the Game
+  `;
+
+  message.innerHTML = `
+    Your final score: ${score} / 10
+  `;
+
+  // Change button text to YES
+  const btn = overlay.querySelector("button:last-of-type");
+  btn.innerText = "Yes";
+  btn.onclick = resetToStart;  // Different function
+}
+
+
+/* ===============================
+   CLOSE RESULT
+================================= */
+
+function closeResult() {
+
+  document.getElementById("resultOverlay").classList.add("hidden");
+
+  // Resume timer if game not finished
+  if (timeLeft > 0 && emails.length > 0) {
+    startTimer();
+  }
+}
+
+/* ===============================
+   Reset Funtion 
+================================= */
+
+
+function resetToStart() {
+
+  // Hide both overlays
+  document.getElementById("quitOverlay").classList.add("hidden");
+  document.getElementById("resultOverlay").classList.add("hidden");
+
+  // Stop timer
+  clearInterval(timerInterval);
+
+  // Reset game values
+  score = 0;
+  timeLeft = 120;
+  selectedIndex = 0;
+
+  document.getElementById("score").innerText = score;
+  document.getElementById("timer").innerText = timeLeft;
+
+  // Reset emails
+  emails = [...originalEmails];
+  emails.sort(() => Math.random() - 0.5);
+
+  renderInbox();
+
+  // Blur game again
+  document.getElementById("gameContent").classList.add("blurred");
+
+  // Show start overlay
+  document.getElementById("startOverlay").style.display = "flex";
+}
+/* ===============================
+   Return to Start Function 
+================================= */
+function returnToStart() {
+
+  // Hide result overlay
+  document.getElementById("resultOverlay").classList.add("hidden");
+
+  // Stop timer
+  clearInterval(timerInterval);
+
+  // Reset values
+  score = 0;
+  timeLeft = 120;
+  selectedIndex = 0;
+
+  document.getElementById("score").innerText = score;
+  document.getElementById("timer").innerText = timeLeft;
+
+  emails = [...originalEmails];
+  emails.sort(() => Math.random() - 0.5);
+
+  renderInbox();
+
+  // Blur game again
+  document.getElementById("gameContent").classList.add("blurred");
+
+  // Show start overlay
+  document.getElementById("startOverlay").style.display = "flex";
 }
