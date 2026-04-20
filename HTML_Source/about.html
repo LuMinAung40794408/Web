@@ -6,6 +6,7 @@
     <title>CyberFun | About</title>
     <link rel="stylesheet" href="../CSS_Source/about.css">
     <link rel="stylesheet" href="../CSS_Source/home.css">
+    <link rel="stylesheet" href="../CSS_Source/quiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -16,18 +17,81 @@
             <img src="../photo/icon.png" alt="CyberFun Logo">
             <span>CyberFun</span>
         </div>
+
         <nav>
             <a href="../index.html">Home</a>
             <a href="about.html">About</a>
             <a href="quiz.html">Quiz</a>
             <a href="cyberlab.html">Cyber Lab</a>
+
+            <!-- PROFILE DROPDOWN -->
+            <div class="profile-menu">
+
+                <button class="profile-btn" onclick="toggleProfile()">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="navUser">Login</span>
+                </button>
+
+                <div id="profileDropdown" class="profile-dropdown">
+
+                    <!-- LOGIN SECTION -->
+                    <div id="loginSection">
+                        <h3>Login to beat the leaderboard!</h3>
+
+                        <input type="text" id="usernameInput" placeholder="Enter your name">
+
+                        <button onclick="loginUser()">Login</button>
+                    </div>
+
+                    <!-- PROFILE TRACKING -->
+                    <div id="profileSection" style="display:none;">
+
+                        <h3>Your Cyber Profile</h3>
+
+                        <p><strong>Username:</strong> <span id="profileName"></span></p>
+
+                        <p><strong>Last Quiz Score:</strong> <span id="lastScore">0</span></p>
+
+                        <p><strong>Best Quiz Score:</strong> <span id="bestScore">0</span></p>
+
+                        <h4>Achievements</h4>
+
+                        <p id="badge_beginner">
+                            <i class="fa-solid fa-lock"></i> Cyber Beginner
+                        </p>
+
+                        <p id="badge_expert">
+                            <i class="fa-solid fa-lock"></i> Cyber Expert
+                        </p>
+
+                        <p id="badge_master">
+                            <i class="fa-solid fa-lock"></i> Cyber Master
+                        </p>
+
+                        <button onclick="openLeaderboard()">
+                            <i class="fa-solid fa-trophy"></i> View Leaderboard
+                        </button>
+
+                        <button onclick="logoutUser()">Logout</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </nav>
     </header>
+
+    <!-- =========================
+       HERO SECTION
+  ========================== -->
 
     <section class="about-mission-section">
 
         <div class="about-mission-container">
 
+            <!-- LEFT SIDE -->
             <div class="mission-left">
 
                 <div class="mission-badge">
@@ -52,6 +116,7 @@
 
             </div>
 
+            <!-- RIGHT SIDE -->
             <div class="mission-right">
 
                 <div class="mission-card">
@@ -138,7 +203,33 @@
     <footer>
         <p>© 2025 CyberFun | Educational Project</p>
     </footer>
-    <script src="../JS_Source/about.js"></script>
+
+    <div id="leaderboardModal" class="leaderboard-modal">
+
+        <div class="leaderboard-box">
+
+            <button class="close-btn" onclick="closeLeaderboard()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2>Leaderboard</h2>
+
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" onclick="switchTab(this, 'easy')">Easy</button>
+                <button class="tab-btn" onclick="switchTab(this, 'medium')">Medium</button>
+                <button class="tab-btn" onclick="switchTab(this, 'hard')">Hard</button>
+            </div>
+
+            <!-- Leaderboard List -->
+            <div id="leaderboardList"></div>
+
+        </div>
+
+    </div>
+
+        <script src="../JS_Source/about.js"></script>
+        <script src="../JS_Source/home.js"></script>
+        <script src="../JS_Source/quiz.js"></script>
 </body>
 
 </html>
