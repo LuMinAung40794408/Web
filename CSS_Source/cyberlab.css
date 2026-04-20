@@ -76,6 +76,18 @@ body {
   margin: 0 auto;
 }
 
+/* ===== SECTION TITLE ===== */
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
 /* ================= TOOLS ================= */
 
 .tool-section {
@@ -87,6 +99,9 @@ body {
 
 .tool-card {
   background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   padding: 45px;
   border-radius: 20px;
   width: 420px;
@@ -134,7 +149,7 @@ body {
 .checkbox-results input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  margin: 0;                
+  margin: 0;              
   accent-color: #38bdf8;
 }
 
@@ -196,8 +211,8 @@ body {
 }
 
 .active-tab {
-  background: #38bdf8;
-  color: #0f172a;
+  background: #38bdf8 !important;
+  color: #0f172a !important;
 }
 
 .stego-panel {
@@ -213,4 +228,140 @@ body {
 
 .stego-panel textarea {
   height: 100px;
+}
+
+
+/* ===== PASSWORD STRENGTH BAR ===== */
+
+.strength-bar {
+  width: 100%;
+  height: 10px;
+  background: #334155;
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+#strengthFill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+#crackTime {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #cbd5f5;
+}
+
+.stego-panel.active-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stego-input-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* File input styling */
+.stego-panel input[type="file"] {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  color: #e2e8f0;
+  border: 1px solid rgba(56,189,248,0.3);
+}
+
+.stego-panel textarea {
+  width: 260px;
+  height: 120px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(56,189,248,0.3);
+  resize: none;
+}
+
+/* Button alignment */
+.stego-panel .tool-btn {
+  margin-top: 20px;
+  width: 260px;
+}
+
+#downloadLink {
+  display: none;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: rgba(56,189,248,0.15);
+  border-radius: 10px;
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(56,189,248,0.3);
+  transition: 0.3s ease;
+}
+
+#downloadLink:hover {
+  background: rgba(56,189,248,0.3);
+  transform: translateY(-2px);
+}
+
+/* Decode text styling */
+#decodedText {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #22c55e;
+  word-break: break-word;
+}
+
+/* ===== DECODE RESULT BOX ===== */
+
+.decoded-box {
+  margin-top: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(34,197,94,0.4);
+  border-radius: 12px;
+
+  box-shadow: 0 0 20px rgba(34,197,94,0.2);
+  text-align: center;
+}
+
+.decoded-box h3 {
+  margin-bottom: 10px;
+  color: #22c55e;
+  font-size: 18px;
+}
+
+.decoded-box p {
+  color: #22c55e;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.decoded-box {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
